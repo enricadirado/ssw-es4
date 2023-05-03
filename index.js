@@ -18,12 +18,14 @@ function loadDoc() {
   }
   xhttp.open("GET", "ajax_info.txt");
   xhttp.send();
+
+
 }
+
+btnInput.onkeyup= oggettoArchivio.myFun(btnInput.value);
 */
 const result = document.getElementById('result');
 const btnInput = document.getElementById('btnInput');
-var btnInput_value=btnInput.value;
-console.log(btnInput_value);
 
 var new_archivio=[];
 
@@ -42,18 +44,39 @@ class OggettoArchivio {
     this.oggettoLibro2 = new OggettoLibro("antonia pozzi", "desiderio di cose leggere", "S1L5P2", "davide di rado");
     this.oggettoLibro3 = new OggettoLibro("pierluigi cappello", "stato di quiete", "S3L2P5", "");
   }
-  
   myFun(btn){
-    const xhttp = new XMLHttpRequest();
-    xhttp.onload = function() {
-      result.innerHTML=this.responseText;
-      console.log(responseText);
-      
+    for (let x in this){
+      for (let y in this[x]){
+        if (this[x][y].match(btn)){
+          console.log(this[x][y]);
+          new_archivio.push(this[x][y]);
+        } 
+      }
     }
-    xhttp.open("POST", "https://stackblitz.com/edit/js-zfkay9?file=README.md,index.html,index.js");
-    xhttp.send('keyword='+btn);
   }
 }
 
 var oggettoArchivio = new OggettoArchivio();
-btnInput.keyup= oggettoArchivio.myFun(btnInput_value);
+btnInput.addEventListener('keyup', function(){
+  oggettoArchivio.myFun(btnInput.value);
+});
+result.innerHTML=new_archivio;
+
+
+
+
+/*codice search box
+var searchBox = document.getElementById('search_box');
+searchBox.addEventListener('keyup', function(){
+    console.log(searchBox.value);
+    const xhttp = new XMLHttpRequest();
+    xhttp.onload = function() {
+      result.innerHTML='okr';
+      
+    }
+    xhttp.open("GET", "e.html");
+    xhttp.send();
+    console.log(this.responseText);
+});
+
+*/
