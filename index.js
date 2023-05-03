@@ -59,6 +59,9 @@ class OggettoArchivio {
 var oggettoArchivio = new OggettoArchivio();
 btnInput.addEventListener('keyup', function(){
   oggettoArchivio.myFun(btnInput.value);
+  if(new_archivio.length==1){
+    result.innerHTML=new_archivio[0];
+  }
 });
 result.innerHTML=new_archivio;
 
