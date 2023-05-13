@@ -45,12 +45,15 @@ class OggettoArchivio {
     this.oggettoLibro3 = new OggettoLibro("pierluigi cappello", "stato di quiete", "S3L2P5", "");
   }
   myFun(btn){
+    while(new_archivio.length > 0) {
+      new_archivio.pop();
+    }
     for (let x in this){
       for (let y in this[x]){
         if (this[x][y].match(btn)){
-          console.log(this[x][y]);
           new_archivio.push(this[x][y]);
-        } 
+          console.log(new_archivio);
+        }
       }
     }
   }
