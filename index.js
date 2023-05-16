@@ -38,6 +38,9 @@ class OggettoLibro {
   }
 }
 
+
+/*in archivio va array (proprità)
+lo posso iniizalizzare con dei new*/
 class OggettoArchivio {
   constructor() {
     this.oggettoLibro1 = new OggettoLibro("walt whitman", "leaves of grass", "S3L3P4", "enrica di rado");
@@ -59,7 +62,9 @@ class OggettoArchivio {
   }
 }
 
-var oggettoArchivio = new OggettoArchivio();
+var oggettoArchivio = new Archivio();
+const archivio=new Archivio();
+archivio.addNew(new OggettoLibro("walt whitman", "leaves of grass", "S3L3P4", "enrica di rado"));
 btnInput.addEventListener('keyup', function(){
   oggettoArchivio.myFun(btnInput.value);
   if(new_archivio.length==1){
