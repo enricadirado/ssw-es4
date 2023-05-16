@@ -68,21 +68,3 @@ btnInput.addEventListener('keyup', function(){
 });
 result.innerHTML=new_archivio;
 
-
-
-
-/*codice search box
-var searchBox = document.getElementById('search_box');
-searchBox.addEventListener('keyup', function(){
-    console.log(searchBox.value);
-    const xhttp = new XMLHttpRequest();
-    xhttp.onload = function() {
-      result.innerHTML='okr';
-      
-    }
-    xhttp.open("GET", "e.html");
-    xhttp.send();
-    console.log(this.responseText);
-});
-
-*/
